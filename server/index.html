@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="b">Baixar arquivo</h1>
+    <div id="baixar"></div>
+    <button onclick="baixarItem()">Download</button>
+    <script>
+        function baixarItem(){
+            let b = document.createElement("iframe");
+            b.setAttribute("src", "http://localhost:3000/download");
+            console.log(b)
+            document
+            .querySelector('#baixar')
+            .appendChild(b)
+            // .setAttribute('style', "display:none")
+        }        
+    </script>    
+</body>
+</html>
