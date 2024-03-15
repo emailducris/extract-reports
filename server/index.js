@@ -33,18 +33,18 @@ app.get("/download", (req, res) => {
   res.download(filePath, "texto.txt"); // Envia o arquivo como um anexo com o nome "texto.txt"
 });
 
-///////////////////////
-
 app.get("/merchant", (req, res) => {
-  let SQL = "SELECT * FROM merchant";
+  let SQL = "SELECT * FROM merchant2";
 
   db.query(SQL, (err, result) => {
     if (err) console.log(err);
-    else return result;
+    else return res.send(result);
+    // console.log(result);
   });
+  // console.log(result);
 });
 
-// Inicie o servidor na porta 517
-app.listen(5174, () => {
-  console.log("Servidor rodando: http://localhost:5174");
+// Inicie o servidor na porta 5184
+app.listen(5184, () => {
+  console.log("Servidor rodando: http://localhost:5184");
 });
